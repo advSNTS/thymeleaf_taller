@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Contacto</title>
+        <link rel="stylesheet" th:href="@{/css/main.css}">
+        <link rel="stylesheet" th:href="@{/css/contacto.css}">
+    </head>
+    <body>
+
+        <div th:replace="fragments/header :: header"></div>
+
+        <form>
+            <h2>
+                Formulario de Contacto
+            </h2>
+
+            <fieldset>
+                <legend>INFORMACIÓN BÁSICA</legend>
+                <!-- SIMPLE INPUT -->
+                
+                <div class="form_input">
+                    <label for="nombre">Nombre Completo</label>
+                    <input type="text" placeholder="Diomedes Diaz" id="nombre">
+                </div>
+                <div class="form_input">
+                    <label for="email">Email</label>
+                    <input type="email" placeholder="aydiome@gmail.com" id="email">
+                </div>
+                <div class="form_input">
+                    <label for="asunto">Asunto</label>
+                    <input type="text" placeholder="Olvidarte es imposible" id="asunto">
+                </div>
+            </fieldset>
+
+                <!-- SELECT & OPTION -->
+                
+                <div class="form_input">
+                    <label for="tipoUsuario">Tipo de usuario</label>
+                    <select name="type-of-user" id="tipoUsuario">
+                        <option value="user1">Seguidor/a</option>
+                        <option value="user2">Empresa</option>
+                        <option value="user3">Otros</option>
+                    </select>
+                </div>
+                
+                <!-- DATALIST & OPTION -->
+                
+                <div class="form_input">
+                    <label for="referente">Referente</label>
+                    <input list="referente" name="referente">
+                    <datalist id="referente">
+                        <option value="Un amigo">Un compañero y/o persona</option>
+                        <option value="Una empresa">Organizacion u organismo</option>
+                        <option value="Otro">Otros</option>
+                    </datalist>
+                </div>
+
+            <!-- TEXTAREA -->
+            
+            <div class="form_input">
+                <label for="mensaje">Mensaje</label>
+                <textarea rows="8" placeholder="Deja tu mensaje..." id="mensaje"></textarea>
+            </div>
+            <div class="form_input">
+                <label for="terminos">Acepto los terminos y condiciones</label>
+                <input type="checkbox" class="checkbox" id="terminos">
+            </div>
+        </form>
+        <div th:replace="fragments/footer :: footer"></div>
+    </body>
+</html>
