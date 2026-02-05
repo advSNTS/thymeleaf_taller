@@ -1,17 +1,58 @@
 <!DOCTYPE html>
-<html lang="es-419" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Glosario</title>
-    <link rel="stylesheet" th:href="@{/css/main.css}">
-</head>
-<body>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Glosario</title>
+        <link rel="stylesheet" th:href="@{/css/main.css}">
+        <link rel="stylesheet" th:href="@{/css/glosario.css}">
+    </head>
 
-    <div th:replace="fragments/header :: header"></div>
 
-    <h1>Glosario</h1>
+    <body>
 
-    <div th:replace="fragments/footer :: footer"></div>
+        <div th:replace="fragments/header :: header"></div>
 
-</body>
+        <h1>Glosario</h1>
+
+        <div th:class="Glosario">
+            
+            <div th:class="termino">
+                <h2>Spring Boot</h2>
+                <p>
+                    Framework de Java que permite crear aplicaciones web rápido sin configurar todo a mano. 
+                    Levanta un servidor web interno (Tomcat) y conecta controllers, HTML y CSS.
+                </p>
+            </div>
+
+            <div th:class="termino">
+                <h2>Servidor (Tomcat) </h2>
+                <p>
+                    Programa que escucha peticiones HTTP. <br>
+                    1. Se ejecuta en localhost <br>
+                    2. Usa un puerto (por defecto 8080) <br>
+                    3. Spring Boot lo levanta automáticamente 
+                </p>
+            </div>
+
+            <div th:class="termino">
+                <h2>Docker</h2>
+                <p>
+                    Plataforma que permite ejecutar aplicaciones junto con todas
+                    sus dependencias en contenedores.
+                </p>
+            </div>
+
+            <div th:class="termino">
+                <h2>Imagen</h2>
+                <p>
+                    Plantilla base que contiene todo lo necesario para crear un contenedor.
+                </p>
+            </div>
+
+        </div>
+
+
+
+        <div th:replace="fragments/footer :: footer"></div>
+    </body>
 </html>
