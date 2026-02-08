@@ -16,13 +16,21 @@
 
         <div th:class="Glosario">
             
-            <div th:class="termino">
-                <h2>Spring Boot</h2>
+            <details th:class="glosario-item">
+                <summary>Thymeleaf</summary>
+                <p>
+                    Thymeleaf es un motor de plantillas Java que permite generar vistas HTML
+                    dinámicas integradas con Spring Boot.
+                </p>
+            </details>
+
+            <details th:class="glosario-item">
+                <summary>Spring Boot</summary>
                 <p>
                     Framework de Java que permite crear aplicaciones web rápido sin configurar todo a mano. 
                     Levanta un servidor web interno (Tomcat) y conecta controllers, HTML y CSS.
                 </p>
-            </div>
+            </details>
 
             <div th:class="termino">
                 <h2>Servidor (Tomcat) </h2>
