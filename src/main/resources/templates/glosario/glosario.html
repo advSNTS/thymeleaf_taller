@@ -15,48 +15,66 @@
         <h1>Glosario</h1>
 
         <div th:class="Glosario">
+
+            <h2 th:class="categoria">Conceptos en el taller</h2>
             
             <details th:class="glosario-item">
                 <summary>Thymeleaf</summary>
                 <p>
-                    Thymeleaf es un motor de plantillas Java que permite generar vistas HTML
-                    dinámicas integradas con Spring Boot.
+                    Thymeleaf es un motor de plantillas para Java que permite crear páginas HTML dinámicas 
+                    integradas con aplicaciones Spring Boot. Su principal ventaja es que los archivos HTML 
+                    pueden abrirse directamente en el navegador sin perder estructura, lo que facilita el 
+                    desarrollo y la depuración. Utiliza expresiones especiales para insertar datos del 
+                    backend en la vista. Es muy usado en aplicaciones web del lado del servidor.
                 </p>
             </details>
 
             <details th:class="glosario-item">
                 <summary>Spring Boot</summary>
                 <p>
-                    Framework de Java que permite crear aplicaciones web rápido sin configurar todo a mano. 
-                    Levanta un servidor web interno (Tomcat) y conecta controllers, HTML y CSS.
+                    Spring Boot es un framework de Java que simplifica la creación de aplicaciones web y 
+                    empresariales. Proporciona configuración automática, un servidor embebido y una 
+                    estructura organizada que reduce la cantidad de código y archivos necesarios. Permite 
+                    desarrollar aplicaciones de forma rápida y escalable. Es ampliamente utilizado en el 
+                    desarrollo de APIs y sistemas backend.
                 </p>
             </details>
 
-            <div th:class="termino">
-                <h2>Servidor (Tomcat) </h2>
+            <details th:class="glosario-item">
+                <summary>Servidor (Tomcat) </summary>
                 <p>
+                    Apache Tomcat es un servidor web que permite ejecutar aplicaciones Java basadas en 
+                    servlets y JSP. Actúa como intermediario entre el usuario y la aplicación, procesando 
+                    las solicitudes HTTP y devolviendo respuestas. En Spring Boot puede funcionar como 
+                    servidor embebido o externo. Es uno de los servidores más usados en entornos Java.<br>
                     Programa que escucha peticiones HTTP. <br>
                     1. Se ejecuta en localhost <br>
                     2. Usa un puerto (por defecto 8080) <br>
                     3. Spring Boot lo levanta automáticamente 
                 </p>
-            </div>
+            </details>
 
-            <div th:class="termino">
-                <h2>Docker</h2>
+            <details th:class="glosario-item">
+                <summary>Docker</summary>
                 <p>
-                    Plataforma que permite ejecutar aplicaciones junto con todas
-                    sus dependencias en contenedores.
+                    Docker es una plataforma que permite crear, distribuir y ejecutar aplicaciones dentro 
+                    de contenedores. Un contenedor incluye la aplicación junto con todas sus dependencias, 
+                    asegurando que funcione igual en cualquier entorno. Esto facilita el despliegue y evita 
+                    problemas de compatibilidad. Docker es clave en entornos modernos de desarrollo y DevOps.
                 </p>
-            </div>
+            </details>
 
-            <div th:class="termino">
-                <h2>Imagen</h2>
+            <details th:class="glosario-item">
+                <summary>Imagen</summary>
                 <p>
-                    Plantilla base que contiene todo lo necesario para crear un contenedor.
+                    Una imagen Docker es una plantilla inmutable que contiene todo lo necesario para ejecutar 
+                    una aplicación, como el sistema base, librerías y configuraciones. A partir de una imagen 
+                    se crean contenedores en ejecución. Las imágenes se almacenan en repositorios como Docker Hub. 
+                    Son fundamentales para la portabilidad y reproducibilidad de aplicaciones
                 </p>
-            </div>
+            </details>
 
+            <h2 th:class="categoria">Conceptos de Git</h2>
         </div>
 
 

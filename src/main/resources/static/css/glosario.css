@@ -47,7 +47,7 @@
 
 .glosario-item[open] summary::after {
     content: "Ver menos";
-    color: #dc2626;
+    color: #9a3b3b;
 }
 .glosario-item p {
     background: none;
@@ -63,4 +63,9 @@
 }
 .glosario-item[open] {
     transform: translateY(-2px);
+}
+
+.categoria{
+    color:rgb(98, 100, 103);
+    font-size: 2rem;
 }
