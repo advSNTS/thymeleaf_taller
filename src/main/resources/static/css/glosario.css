@@ -52,7 +52,7 @@
 .glosario-item p {
     background: none;
     box-shadow: none;
-    border: none;
+    border-radius: 16px;
 
     margin: 10px 0 20px;
     padding: 0 10px;

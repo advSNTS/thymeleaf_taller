@@ -75,6 +75,70 @@
             </details>
 
             <h2 th:class="categoria">Conceptos de Git</h2>
+            <details th:class="glosario-item">
+                <summary>Repositorio</summary>
+                <p>
+                    Un repositorio es el espacio donde se almacena el código fuente de un proyecto junto con su 
+                    historial de cambios. Puede estar en un entorno local o en plataformas remotas como GitHub. 
+                    Permite trabajar de forma organizada y mantener versiones del proyecto. Es la base del trabajo 
+                    colaborativo con Git.
+                </p>
+            </details>
+            <details th:class="glosario-item">
+                <summary>Rama (Branch) </summary>
+                <p>
+                    Una rama es una línea independiente de desarrollo dentro de un repositorio Git. Permite trabajar
+                     en nuevas funcionalidades o correcciones sin afectar el código principal. Cada rama puede 
+                     evolucionar de manera separada. Esto facilita el trabajo en equipo y la experimentación segura.
+                </p>
+            </details>
+            <details th:class="glosario-item">
+                <summary>Main</summary>
+                <p>
+                    Main es la rama principal de un repositorio Git y representa la versión estable del proyecto. 
+                    Normalmente contiene el código listo para producción o entrega. Los cambios importantes se 
+                    integran a esta rama solo después de ser revisados. Antes se llamaba comúnmente master.
+                </p>
+            </details>
+
+            <details th:class="glosario-item">
+                <summary>Commit</summary>
+                <p>
+                    Un commit es un registro que guarda los cambios realizados en el código en un momento específico. 
+                    Incluye un mensaje descriptivo que explica qué se modificó. Cada commit permite volver a versiones 
+                    anteriores del proyecto. Es esencial para el control del historial y la trazabilidad del código.
+                </p>
+            </details>
+            <details th:class="glosario-item">
+                <summary>Pull Request (PR)</summary>
+                <p>
+                    Un Pull Request es una solicitud para fusionar cambios de una rama a otra, generalmente hacia la 
+                    rama main. Permite revisar el código antes de integrarlo al proyecto principal. Facilita la colaboración 
+                    y el control de calidad. Es una práctica estándar en equipos de desarrollo.
+                </p>
+            </details>
+
+            </details>
+            <details th:class="glosario-item">
+                <summary>Merge</summary>
+                <p>
+                    Merge es el proceso de unir los cambios de una rama con otra dentro de Git. Generalmente se usa para 
+                    integrar una funcionalidad terminada en la rama principal. Puede realizarse automáticamente o requerir 
+                    resolver conflictos. Es un paso clave en el flujo de trabajo colaborativo.
+                </p>
+            </details>
+
+            <details th:class="glosario-item">
+                <summary>Conflicto</summary>
+                <p>
+                    Un conflicto ocurre cuando Git no puede combinar cambios automáticamente porque afectan las mismas 
+                    líneas de código. Debe resolverse manualmente por el desarrollador. Los conflictos son comunes en 
+                    trabajos colaborativos. Resolverlos correctamente garantiza la integridad del proyecto.
+                </p>
+            </details>
+
+
+
         </div>
 
 
