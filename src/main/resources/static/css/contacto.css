@@ -1,15 +1,3 @@
-/* Título */
-h2 {
-    text-align: center;
-    margin: 0 0 10px 0;
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 22px;
-    padding: 15px;
-    color: #0f172a;
-    letter-spacing: 0.05em;
-}
-
 /* Formulario */
 form {
     max-width: 500px;
