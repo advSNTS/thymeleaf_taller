@@ -22,9 +22,9 @@ form {
 }
 
 /* Inputs generales */
-input,
-textarea,
-select {
+form input,
+form textarea,
+form select {
     width: 100%;
     box-sizing: border-box;
     padding: 10px 14px;
@@ -40,32 +40,32 @@ select {
 }
 
 /* Placeholder */
-input::placeholder,
-textarea::placeholder {
+form input::placeholder,
+form textarea::placeholder {
     color: #64748b;
 }
 
 /* Select */
-select {
+form select {
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.9);
 }
 
 /* Opciones */
-option {
+form option {
     background-color: #f8fafc;
     color: #0f172a;
 }
 
 /* Textarea */
-textarea {
+form textarea {
     resize: vertical;
     min-height: 100px;
     max-height: 200px;
 }
 
 /* Labels */
-label {
+form label {
     display: block;
     font-size: 0.85rem;
     font-weight: 600;
@@ -74,14 +74,14 @@ label {
 }
 
 /* Checkbox */
-.checkbox {
+form .checkbox {
     width: auto;
     height: auto;
     box-shadow: none;
 }
 
 /* Fieldset */
-fieldset {
+form fieldset {
     margin: 20px;
     padding: 12px 12px 20px 12px;
 
@@ -90,7 +90,7 @@ fieldset {
 }
 
 /* Legend */
-legend {
+form legend {
     padding: 0 10px;
     color: #0f172a;
     font-weight: 600;
