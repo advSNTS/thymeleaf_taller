@@ -97,6 +97,23 @@ form legend {
     font-size: 0.85rem;
 }
 
+/* Grupo checkbox */
+.checkbox_group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox_group label {
+    margin: 0;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.checkbox_group input[type="checkbox"] {
+    margin: 0;
+}
+
 /* Acciones del Formulario */
 .form_actions {
     text-align: center;
