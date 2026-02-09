@@ -9,7 +9,7 @@
     </head>
     <body>
 
-        <div th:replace="fragments/header :: header"></div>
+        <div th:replace="~{fragments/header :: header}"></div>
 
         <form>
             <h2>
@@ -74,6 +74,6 @@
                 <button type="submit">Enviar mensaje</button>
             </div>
         </form>
-        <div th:replace="fragments/footer :: footer"></div>
+        <div th:replace="~{fragments/footer :: footer}"></div>
     </body>
 </html>
