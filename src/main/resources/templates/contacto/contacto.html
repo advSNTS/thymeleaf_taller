@@ -9,7 +9,7 @@
     </head>
     <body>
 
-        <div th:replace="fragments/header :: header"></div>
+        <div th:replace="~{fragments/header :: header}"></div>
 
         <form>
             <h2>
@@ -65,7 +65,12 @@
             </div>
             <div class="form_input checkbox_group">
                 <input type="checkbox" class="checkbox" id="terminos">
-                <label for="terminos">Acepto los terminos y condiciones</label>
+                <label for="terminos">
+                    Acepto los 
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" 
+                    target="_blank" 
+                    rel="noopener noreferrer">términos y condiciones</a>
+                </label>
             </div>
 
             <!--SUBMIT BUTTON-->
@@ -74,6 +79,6 @@
                 <button type="submit">Enviar mensaje</button>
             </div>
         </form>
-        <div th:replace="fragments/footer :: footer"></div>
+        <div th:replace="~{fragments/footer :: footer}"></div>
     </body>
 </html>
