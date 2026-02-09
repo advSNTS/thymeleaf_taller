@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    <div th:replace="fragments/header :: header"></div>
+    <header th:insert="~{fragments/header :: header}"></header>
 
     <h1>Grupo: Luis y los Bugs</h1>
     <p>
@@ -36,7 +36,7 @@
     </p>
 
 
-    <div th:replace="fragments/footer :: footer"></div>
+    <header th:insert="~{fragments/footer :: footer}"></header>
 
 </body>
 </html>
