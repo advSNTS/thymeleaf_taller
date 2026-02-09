@@ -15,39 +15,129 @@
         <h1>Glosario</h1>
 
         <div th:class="Glosario">
-            
-            <div th:class="termino">
-                <h2>Spring Boot</h2>
-                <p>
-                    Framework de Java que permite crear aplicaciones web rápido sin configurar todo a mano. 
-                    Levanta un servidor web interno (Tomcat) y conecta controllers, HTML y CSS.
-                </p>
-            </div>
 
-            <div th:class="termino">
-                <h2>Servidor (Tomcat) </h2>
+            <h2 th:class="categoria">Conceptos en el taller</h2>
+            
+            <details th:class="glosario-item">
+                <summary>Thymeleaf</summary>
                 <p>
+                    Thymeleaf es un motor de plantillas para Java que permite crear páginas HTML dinámicas 
+                    integradas con aplicaciones Spring Boot. Su principal ventaja es que los archivos HTML 
+                    pueden abrirse directamente en el navegador sin perder estructura, lo que facilita el 
+                    desarrollo y la depuración. Utiliza expresiones especiales para insertar datos del 
+                    backend en la vista. Es muy usado en aplicaciones web del lado del servidor.
+                </p>
+            </details>
+
+            <details th:class="glosario-item">
+                <summary>Spring Boot</summary>
+                <p>
+                    Spring Boot es un framework de Java que simplifica la creación de aplicaciones web y 
+                    empresariales. Proporciona configuración automática, un servidor embebido y una 
+                    estructura organizada que reduce la cantidad de código y archivos necesarios. Permite 
+                    desarrollar aplicaciones de forma rápida y escalable. Es ampliamente utilizado en el 
+                    desarrollo de APIs y sistemas backend.
+                </p>
+            </details>
+
+            <details th:class="glosario-item">
+                <summary>Servidor (Tomcat) </summary>
+                <p>
+                    Apache Tomcat es un servidor web que permite ejecutar aplicaciones Java basadas en 
+                    servlets y JSP. Actúa como intermediario entre el usuario y la aplicación, procesando 
+                    las solicitudes HTTP y devolviendo respuestas. En Spring Boot puede funcionar como 
+                    servidor embebido o externo. Es uno de los servidores más usados en entornos Java.<br>
                     Programa que escucha peticiones HTTP. <br>
                     1. Se ejecuta en localhost <br>
                     2. Usa un puerto (por defecto 8080) <br>
                     3. Spring Boot lo levanta automáticamente 
                 </p>
-            </div>
+            </details>
 
-            <div th:class="termino">
-                <h2>Docker</h2>
+            <details th:class="glosario-item">
+                <summary>Docker</summary>
                 <p>
-                    Plataforma que permite ejecutar aplicaciones junto con todas
-                    sus dependencias en contenedores.
+                    Docker es una plataforma que permite crear, distribuir y ejecutar aplicaciones dentro 
+                    de contenedores. Un contenedor incluye la aplicación junto con todas sus dependencias, 
+                    asegurando que funcione igual en cualquier entorno. Esto facilita el despliegue y evita 
+                    problemas de compatibilidad. Docker es clave en entornos modernos de desarrollo y DevOps.
                 </p>
-            </div>
+            </details>
 
-            <div th:class="termino">
-                <h2>Imagen</h2>
+            <details th:class="glosario-item">
+                <summary>Imagen</summary>
                 <p>
-                    Plantilla base que contiene todo lo necesario para crear un contenedor.
+                    Una imagen Docker es una plantilla inmutable que contiene todo lo necesario para ejecutar 
+                    una aplicación, como el sistema base, librerías y configuraciones. A partir de una imagen 
+                    se crean contenedores en ejecución. Las imágenes se almacenan en repositorios como Docker Hub. 
+                    Son fundamentales para la portabilidad y reproducibilidad de aplicaciones
                 </p>
-            </div>
+            </details>
+
+            <h2 th:class="categoria">Conceptos de Git</h2>
+            <details th:class="glosario-item">
+                <summary>Repositorio</summary>
+                <p>
+                    Un repositorio es el espacio donde se almacena el código fuente de un proyecto junto con su 
+                    historial de cambios. Puede estar en un entorno local o en plataformas remotas como GitHub. 
+                    Permite trabajar de forma organizada y mantener versiones del proyecto. Es la base del trabajo 
+                    colaborativo con Git.
+                </p>
+            </details>
+            <details th:class="glosario-item">
+                <summary>Rama (Branch) </summary>
+                <p>
+                    Una rama es una línea independiente de desarrollo dentro de un repositorio Git. Permite trabajar
+                     en nuevas funcionalidades o correcciones sin afectar el código principal. Cada rama puede 
+                     evolucionar de manera separada. Esto facilita el trabajo en equipo y la experimentación segura.
+                </p>
+            </details>
+            <details th:class="glosario-item">
+                <summary>Main</summary>
+                <p>
+                    Main es la rama principal de un repositorio Git y representa la versión estable del proyecto. 
+                    Normalmente contiene el código listo para producción o entrega. Los cambios importantes se 
+                    integran a esta rama solo después de ser revisados. Antes se llamaba comúnmente master.
+                </p>
+            </details>
+
+            <details th:class="glosario-item">
+                <summary>Commit</summary>
+                <p>
+                    Un commit es un registro que guarda los cambios realizados en el código en un momento específico. 
+                    Incluye un mensaje descriptivo que explica qué se modificó. Cada commit permite volver a versiones 
+                    anteriores del proyecto. Es esencial para el control del historial y la trazabilidad del código.
+                </p>
+            </details>
+            <details th:class="glosario-item">
+                <summary>Pull Request (PR)</summary>
+                <p>
+                    Un Pull Request es una solicitud para fusionar cambios de una rama a otra, generalmente hacia la 
+                    rama main. Permite revisar el código antes de integrarlo al proyecto principal. Facilita la colaboración 
+                    y el control de calidad. Es una práctica estándar en equipos de desarrollo.
+                </p>
+            </details>
+
+            </details>
+            <details th:class="glosario-item">
+                <summary>Merge</summary>
+                <p>
+                    Merge es el proceso de unir los cambios de una rama con otra dentro de Git. Generalmente se usa para 
+                    integrar una funcionalidad terminada en la rama principal. Puede realizarse automáticamente o requerir 
+                    resolver conflictos. Es un paso clave en el flujo de trabajo colaborativo.
+                </p>
+            </details>
+
+            <details th:class="glosario-item">
+                <summary>Conflicto</summary>
+                <p>
+                    Un conflicto ocurre cuando Git no puede combinar cambios automáticamente porque afectan las mismas 
+                    líneas de código. Debe resolverse manualmente por el desarrollador. Los conflictos son comunes en 
+                    trabajos colaborativos. Resolverlos correctamente garantiza la integridad del proyecto.
+                </p>
+            </details>
+
+
 
         </div>
 
