@@ -1,112 +1,97 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>Contacto - Diomedes Style</title>
-        <link rel="stylesheet" th:href="@{/css/main.css}">
-        <link rel="stylesheet" th:href="@{/css/contacto.css}">
-        <style>
-            /* Un poco de estilo rápido para los errores, puedes moverlo a tu contacto.css */
-            .error-mensaje {
-                color: #e74c3c;
-                font-size: 0.85rem;
-                margin-top: 5px;
-                display: block;
-                min-height: 1.2em;
-            }
-            #contador-caracteres {
-                font-size: 0.85rem;
-                color: #666;
-                display: block;
-                margin-top: 5px;
-            }
-        </style>
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Contacto - Diomedes Style</title>
 
-        <div th:replace="~{fragments/header :: header}"></div>
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <link rel="stylesheet" th:href="@{/css/contacto.css}">
+</head>
 
-        <form id="formularioContacto" novalidate>
-            <h2>Formulario de Contacto</h2>
+<body>
 
-            <fieldset>
-                <legend>INFORMACIÓN BÁSICA</legend>
-                
-                <div class="form_input">
-                    <label for="nombre">Nombre Completo</label>
-                    <input type="text" placeholder="Diomedes Diaz" id="nombre">
-                    <span class="error-mensaje" id="error-nombre"></span>
-                </div>
+<div th:replace="~{fragments/header :: header}"></div>
 
-                <div class="form_input">
-                    <label for="email">Email</label>
-                    <input type="email" placeholder="aydiome@gmail.com" id="email">
-                    <span class="error-mensaje" id="error-email"></span>
-                </div>
+<form th:action="@{/contacto}" th:object="${contacto}" method="post">
 
-                <div class="form_input">
-                    <label for="telefono">Teléfono</label>
-                    <input type="text" placeholder="3001234567" id="telefono">
-                    <span class="error-mensaje" id="error-telefono"></span>
-                </div>
+    <h2>Formulario de Contacto</h2>
 
-                <div class="form_input">
-                    <label for="asunto">Asunto o motivo</label>
-                    <select id="asunto">
-                        <option value="">Seleccione una opción</option>
-                        <option value="contratacion">Contratación para parranda</option>
-                        <option value="saludo">Enviar un saludo</option>
-                        <option value="otro">Olvidarte es imposible (Otros)</option>
-                    </select>
-                    <span class="error-mensaje" id="error-asunto"></span>
-                </div>
-            </fieldset>
+    <fieldset>
+        <legend>INFORMACIÓN BÁSICA</legend>
 
-            <div class="form_input">
-                <label for="tipoUsuario">Tipo de usuario</label>
-                <select name="type-of-user" id="tipoUsuario">
-                    <option value="user1">Seguidor/a</option>
-                    <option value="user2">Empresa</option>
-                    <option value="user3">Otros</option>
-                </select>
-            </div>
-            
-            <div class="form_input">
-                <label for="referente_input">Referente</label>
-                <input list="referente" name="referente" id="referente_input">
-                <datalist id="referente">
-                    <option value="Un amigo">Un compañero y/o persona</option>
-                    <option value="Una empresa">Organización u organismo</option>
-                    <option value="Otro">Otros</option>
-                </datalist>
-            </div>
+        <div class="form_input">
+            <label>Nombre Completo</label>
+            <input type="text" placeholder="Diomedes Diaz"
+                   th:field="*{nombre}">
+        </div>
 
-            <div class="form_input">
-                <label for="mensaje">Mensaje</label>
-                <textarea rows="8" placeholder="Deja tu mensaje..." id="mensaje"></textarea>
-                <span id="contador-caracteres">Faltan 20 caracteres para el mínimo.</span>
-                <span class="error-mensaje" id="error-mensaje"></span>
-            </div>
+        <div class="form_input">
+            <label>Email</label>
+            <input type="email" placeholder="aydiome@gmail.com"
+                   th:field="*{email}">
+        </div>
 
-            <div class="form_input checkbox_group">
-                <input type="checkbox" class="checkbox" id="terminos">
-                <label for="terminos">
-                    Acepto los 
-                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" 
-                       target="_blank" 
-                       rel="noopener noreferrer">términos y condiciones</a>
-                </label>
-                <span class="error-mensaje" id="error-terminos"></span>
-            </div>
+        <div class="form_input">
+            <label>Teléfono</label>
+            <input type="text" placeholder="3001234567"
+                   th:field="*{telefono}">
+        </div>
 
-            <div class="form_input form_actions">
-                <button type="submit">Enviar mensaje</button>
-            </div>
-        </form>
+        <div class="form_input">
+            <label>Asunto o motivo</label>
+            <select th:field="*{asunto}">
+                <option value="">Seleccione una opción</option>
+                <option value="contratacion">Contratación para parranda</option>
+                <option value="saludo">Enviar un saludo</option>
+                <option value="otro">Olvidarte es imposible (Otros)</option>
+            </select>
+        </div>
+    </fieldset>
 
-        <div th:replace="~{fragments/footer :: footer}"></div>
+    <div class="form_input">
+        <label>Tipo de usuario</label>
+        <select th:field="*{tipoUsuario}">
+            <option value="Seguidor">Seguidor/a</option>
+            <option value="Empresa">Empresa</option>
+            <option value="Otros">Otros</option>
+        </select>
+    </div>
 
-        <script th:src="@{/js/validaciones.js}"></script>
-    </body>
+    <div class="form_input">
+        <label>Referente</label>
+        <input list="referente"
+               th:field="*{referente}">
+        <datalist id="referente">
+            <option value="Un amigo">
+            <option value="Una empresa">
+            <option value="Otro">
+        </datalist>
+    </div>
+
+    <div class="form_input">
+        <label>Mensaje</label>
+        <textarea rows="8"
+                  placeholder="Deja tu mensaje..."
+                  th:field="*{mensaje}"></textarea>
+    </div>
+
+    <div class="form_input checkbox_group">
+        <input type="checkbox"
+               class="checkbox"
+               th:field="*{terminos}">
+        <label>
+            Acepto los términos y condiciones
+        </label>
+    </div>
+
+    <div class="form_input form_actions">
+        <button type="submit">Enviar mensaje</button>
+    </div>
+
+</form>
+
+<div th:replace="~{fragments/footer :: footer}"></div>
+
+</body>
 </html>
