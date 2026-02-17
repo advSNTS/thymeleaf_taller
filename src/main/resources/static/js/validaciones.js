@@ -85,10 +85,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         if (esValido) {
+            form.submit(); 
             alert("¡Mensaje enviado correctamente!");
-            form.reset();
-            contadorCaracteres.textContent = "Faltan 20 caracteres para el mínimo.";
-            contadorCaracteres.style.color = "";
         }
     });
 
