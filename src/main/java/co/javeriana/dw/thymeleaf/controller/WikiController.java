@@ -27,4 +27,9 @@ public class WikiController {
     public String integrantes() {
         return "integrantes/integrantes";
     }
+
+    @GetMapping("/error")
+public String error() {
+    return "error"; // crea un error.html simple en templates/
+}
 }

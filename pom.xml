@@ -26,14 +26,16 @@
 
     <dependencies>
 
-       	 <dependency>
-    			<groupId>org.springframework.boot</groupId>
-   			 <artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-webmvc</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <!-- ← este ya incluye spring-mvc, elimina el starter-webmvc duplicado -->
+        </dependency>
+
+        <!-- ↓ ESTA ERA LA QUE FALTABA -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
 
         <dependency>
@@ -55,7 +57,8 @@
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf-test</artifactId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <!-- ← corregido, el anterior no existe -->
             <scope>test</scope>
         </dependency>
 

@@ -27,6 +27,7 @@
 
         <div th:replace="~{fragments/header :: header}"></div>
 
+        <div th:if="${param.exito}" style="color: green; font-weight: bold; margin-bottom: 1rem;">¡Mensaje enviado correctamente!</div>
         <form id="formularioContacto" 
               th:action="@{/contacto}" 
                 th:object="${contacto}" 

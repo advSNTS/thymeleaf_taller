@@ -86,7 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (esValido) {
             form.submit(); 
-            alert("¡Mensaje enviado correctamente!");
         }
     });
 
