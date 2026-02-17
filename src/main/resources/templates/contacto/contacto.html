@@ -35,25 +35,25 @@
                 
                 <div class="form_input">
                     <label for="nombre">Nombre Completo</label>
-                    <input type="text" placeholder="Diomedes Diaz" id="nombre">
+                    <input type="text" placeholder="Diomedes Diaz" id="nombre", name="nombre">
                     <span class="error-mensaje" id="error-nombre"></span>
                 </div>
 
                 <div class="form_input">
                     <label for="email">Email</label>
-                    <input type="email" placeholder="aydiome@gmail.com" id="email">
+                    <input type="email" placeholder="aydiome@gmail.com" id="email", name="correo">
                     <span class="error-mensaje" id="error-email"></span>
                 </div>
 
                 <div class="form_input">
                     <label for="telefono">Teléfono</label>
-                    <input type="text" placeholder="3001234567" id="telefono">
+                    <input type="text" placeholder="3001234567" id="telefono", name="telefono">
                     <span class="error-mensaje" id="error-telefono"></span>
                 </div>
 
                 <div class="form_input">
                     <label for="asunto">Asunto o motivo</label>
-                    <select id="asunto">
+                    <select id="asunto", name="asunto">
                         <option value="">Seleccione una opción</option>
                         <option value="contratacion">Contratación para parranda</option>
                         <option value="saludo">Enviar un saludo</option>
@@ -84,7 +84,7 @@
 
             <div class="form_input">
                 <label for="mensaje">Mensaje</label>
-                <textarea rows="8" placeholder="Deja tu mensaje..." id="mensaje"></textarea>
+                <textarea rows="8" placeholder="Deja tu mensaje..." id="mensaje"name="mensaje"></textarea>
                 <span id="contador-caracteres">Faltan 20 caracteres para el mínimo.</span>
                 <span class="error-mensaje" id="error-mensaje"></span>
             </div>
