@@ -24,10 +24,10 @@ public class ContactoController {
 
     @PostMapping("/contacto")
     public String guardarContacto(@ModelAttribute Contacto contacto) {
-        // Guardamos en la Base de Datos H2
+
         contactoRepository.save(contacto);
         
-        // Redirigimos con una variable de éxito para mostrar un mensaje (opcional)
+
         return "redirect:/contacto?exito";
     }
 }
