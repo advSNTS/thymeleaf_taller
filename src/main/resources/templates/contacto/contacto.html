@@ -27,7 +27,11 @@
 
         <div th:replace="~{fragments/header :: header}"></div>
 
-        <form id="formularioContacto" novalidate>
+        <form id="formularioContacto" 
+              th:action="@{/contacto}" 
+                th:object="${contacto}" 
+                   method="post"
+                      novalidate>
             <h2>Formulario de Contacto</h2>
 
             <fieldset>
@@ -35,25 +39,25 @@
                 
                 <div class="form_input">
                     <label for="nombre">Nombre Completo</label>
-                    <input type="text" placeholder="Diomedes Diaz" id="nombre", name="nombre">
+                    <input type="text" th:field="*{nombre}" placeholder="Diomedes Diaz">
                     <span class="error-mensaje" id="error-nombre"></span>
                 </div>
 
                 <div class="form_input">
                     <label for="email">Email</label>
-                    <input type="email" placeholder="aydiome@gmail.com" id="email", name="correo">
+                    <input type="email" th:field="*{correo}" placeholder="aydiome@gmail.com">
                     <span class="error-mensaje" id="error-email"></span>
                 </div>
 
                 <div class="form_input">
                     <label for="telefono">Teléfono</label>
-                    <input type="text" placeholder="3001234567" id="telefono", name="telefono">
+                    <input type="text" th:field="*{telefono}" placeholder="3001234567">
                     <span class="error-mensaje" id="error-telefono"></span>
                 </div>
 
                 <div class="form_input">
                     <label for="asunto">Asunto o motivo</label>
-                    <select id="asunto", name="asunto">
+                    <select id="asunto" th:field="*{asunto}" name="asunto">
                         <option value="">Seleccione una opción</option>
                         <option value="contratacion">Contratación para parranda</option>
                         <option value="saludo">Enviar un saludo</option>
@@ -65,7 +69,7 @@
 
             <div class="form_input">
                 <label for="tipoUsuario">Tipo de usuario</label>
-                <select name="type-of-user" id="tipoUsuario">
+                <select name="type-of-user" id="tipoUsuario" th:field="*{tipoUsuario}">
                     <option value="user1">Seguidor/a</option>
                     <option value="user2">Empresa</option>
                     <option value="user3">Otros</option>
@@ -74,7 +78,7 @@
             
             <div class="form_input">
                 <label for="referente_input">Referente</label>
-                <input list="referente" name="referente" id="referente_input">
+                <input list="referente" name="referente" id="referente_input" th:field="*{referente}">
                 <datalist id="referente">
                     <option value="Un amigo">Un compañero y/o persona</option>
                     <option value="Una empresa">Organización u organismo</option>
@@ -84,7 +88,7 @@
 
             <div class="form_input">
                 <label for="mensaje">Mensaje</label>
-                <textarea rows="8" placeholder="Deja tu mensaje..." id="mensaje"name="mensaje"></textarea>
+                <textarea rows="8" placeholder="Deja tu mensaje..." id="mensaje"name="mensaje" th:field="*{mensaje}"></textarea>
                 <span id="contador-caracteres">Faltan 20 caracteres para el mínimo.</span>
                 <span class="error-mensaje" id="error-mensaje"></span>
             </div>
