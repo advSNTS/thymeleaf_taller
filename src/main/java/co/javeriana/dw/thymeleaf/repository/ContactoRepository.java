@@ -6,4 +6,5 @@ import co.javeriana.dw.thymeleaf.model.Contacto;
 
 @Repository
 public interface ContactoRepository extends JpaRepository<Contacto, Long> {
+    // JpaRepository ya incluye métodos como: save(), findAll(), findById(), delete()
 }
