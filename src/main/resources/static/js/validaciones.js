@@ -98,5 +98,5 @@ document.addEventListener("DOMContentLoaded", () => {
         if (errorSpan) {
             errorSpan.textContent = mensaje;
         }
-    }
+    }  
 });
