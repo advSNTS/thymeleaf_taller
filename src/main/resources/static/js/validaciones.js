@@ -1,29 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("formularioContacto");
     const mensajeInput = document.getElementById("mensaje");
-    const contadorCaracteres = document.getElementById("contador-caracteres"); // ← ID corregido
+    const contadorCaracteres = document.getElementById("contador-caracteres");
+    const mensajeExito = document.getElementById("mensaje-exito");
 
-    // --- 1. Contador de caracteres en tiempo real ---
+    const MIN = 40;
+    const MAX = 400;
+
     mensajeInput.addEventListener("input", () => {
         const longitud = mensajeInput.value.length;
 
-        if (longitud < 20) {
-            contadorCaracteres.textContent = `Faltan ${20 - longitud} caracteres para el mínimo.`;
+        if (longitud < MIN) {
+            contadorCaracteres.textContent = `Faltan ${MIN - longitud} caracteres para el mínimo.`;
             contadorCaracteres.style.color = "red";
-        } else if (longitud > 400) {
-            contadorCaracteres.textContent = `Te has pasado por ${longitud - 400} caracteres.`;
+        } else if (longitud > MAX) {
+            contadorCaracteres.textContent = `Te has pasado por ${longitud - MAX} caracteres.`;
             contadorCaracteres.style.color = "red";
         } else {
-            contadorCaracteres.textContent = `${longitud}/400 caracteres.`;
+            contadorCaracteres.textContent = `${longitud}/${MAX} caracteres.`;
             contadorCaracteres.style.color = "green";
         }
     });
 
-    // --- 2. Validación al enviar ---
+
     form.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        // Limpiar errores anteriores (clase corregida a error-mensaje)
+        mensajeExito.style.display = "none";
         document.querySelectorAll(".error-mensaje").forEach(el => el.textContent = "");
 
         let esValido = true;
@@ -69,15 +72,15 @@ document.addEventListener("DOMContentLoaded", () => {
         if (longitudMensaje === 0) {
             mostrarError("mensaje", "El mensaje es obligatorio.");
             esValido = false;
-        } else if (longitudMensaje < 20) {
-            mostrarError("mensaje", `El mensaje debe tener mínimo 20 caracteres. Faltan ${20 - longitudMensaje}.`);
+        } else if (longitudMensaje < MIN) {
+            mostrarError("mensaje", `El mensaje debe tener mínimo ${MIN} caracteres. Faltan ${MIN - longitudMensaje}.`);
             esValido = false;
-        } else if (longitudMensaje > 400) {
-            mostrarError("mensaje", `El mensaje no puede superar los 400 caracteres.`);
+        } else if (longitudMensaje > MAX) {
+            mostrarError("mensaje", `El mensaje no puede superar los ${MAX} caracteres.`);
             esValido = false;
         }
 
-        // Términos y condiciones
+        // Términos
         const terminos = document.getElementById("terminos").checked;
         if (!terminos) {
             mostrarError("terminos", "Debes aceptar los términos y condiciones.");
@@ -85,18 +88,18 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         if (esValido) {
-            alert("¡Mensaje enviado correctamente!");
+            // Mostrar mensaje de éxito
+            mensajeExito.style.display = "block";
+            mensajeExito.scrollIntoView({ behavior: "smooth" });
+
             form.reset();
-            contadorCaracteres.textContent = "Faltan 20 caracteres para el mínimo.";
+            contadorCaracteres.textContent = `Faltan ${MIN} caracteres para el mínimo.`;
             contadorCaracteres.style.color = "";
         }
     });
 
-    // --- Función auxiliar para mostrar errores ---
     function mostrarError(id, mensaje) {
         const errorSpan = document.getElementById(`error-${id}`);
-        if (errorSpan) {
-            errorSpan.textContent = mensaje;
-        }
+        if (errorSpan) errorSpan.textContent = mensaje;
     }
 });
