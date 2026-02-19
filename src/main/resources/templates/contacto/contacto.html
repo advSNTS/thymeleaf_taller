@@ -13,9 +13,12 @@
 
 <div th:replace="~{fragments/header :: header}"></div>
 
-<form th:action="@{/contacto}" th:object="${contacto}" method="post">
+<form id="formularioContacto" th:action="@{/contacto}" th:object="${contacto}" method="post">
 
     <h2>Formulario de Contacto</h2>
+    <div id="mensaje-exito" style="display:none; background:#d4edda; color:#155724; padding:1rem; border-radius:6px; margin-bottom:1rem;">
+        ¡Tu mensaje fue enviado correctamente!
+    </div>
 
     <fieldset>
         <legend>INFORMACIÓN BÁSICA</legend>
