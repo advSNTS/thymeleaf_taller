@@ -24,6 +24,14 @@
         vistas a lo largo del curso.
     </p>
 
+    <h2>Objetivo del sistema</h2>
+    <p>
+        El sistema busca simular y visualizar la ejecución de procesos en un entorno controlado,
+        permitiendo comprender conceptos como concurrencia, planificación y uso de recursos del sistema.
+    </p>
+
+
+
     <h3 class="h3ash2"> Tecnologias utilizadas</h3>
     <p>
         Usamos thymeleaf como motor de plantillas para generar las páginas web dinámicamente. 
@@ -36,11 +44,30 @@
     <i class="fa-brands fa-css3-alt"></i> CSS
     <i class="fa-brands fa-js"></i> JavaScript
     <i class="fa-brands fa-docker"></i> Docker
+    <i class="fa-solid fa-leaf"></i> Thymeleaf
     </p>
 
 
+<h2>Arquitectura general</h2>
+
+    <div class="auxiliar">
+        <ul>
+            <li>Frontend con Thymeleaf</li>
+            <li>Persistencia en Java JPA</li>
+            <li>Contenerización con Docker</li>
+        </ul>
+    </div>
+
+
+
+
+
     <h2>Secciones</h2>
+
     <p class="wiki-sections">
+
+    Puedes comenzar con la guía de instalación, revisar el glosario para entender los conceptos
+    y explorar las secciones técnicas del proyecto. <br>
         <a th:href="@{/guia}"><strong>Guia de Instalación</strong></a><br>
 
         <a th:href="@{/glosario}"><strong>Glosario</strong></a><br>
