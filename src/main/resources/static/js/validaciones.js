@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const MIN = 40;
     const MAX = 400;
 
+    // --- LÓGICA DEL CONTADOR DE CARACTERES ---
     mensajeInput.addEventListener("input", () => {
         const longitud = mensajeInput.value.length;
 
@@ -22,10 +23,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-
+    // --- LÓGICA DE VALIDACIÓN Y ENVÍO ---
     form.addEventListener("submit", (e) => {
+        // Previene que la página se recargue inmediatamente
         e.preventDefault();
 
+        // Ocultar mensaje de éxito previo y limpiar errores
         mensajeExito.style.display = "none";
         document.querySelectorAll(".error-mensaje").forEach(el => el.textContent = "");
 
@@ -34,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Nombre
         const nombre = document.getElementById("nombre").value.trim();
         if (nombre === "" || nombre.length < 3) {
-            mostrarError("nombre", "Campo obligatorio. Mínimo 3 caracteres (no solo espacios).");
+            mostrarError("nombre", "Campo obligatorio. Mínimo 3 caracteres.");
             esValido = false;
         }
 
@@ -45,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
             mostrarError("email", "El correo electrónico es obligatorio.");
             esValido = false;
         } else if (!emailRegex.test(email)) {
-            mostrarError("email", "Ingresa un correo válido (debe contener @ y un punto después).");
+            mostrarError("email", "Ingresa un correo válido.");
             esValido = false;
         }
 
@@ -73,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
             mostrarError("mensaje", "El mensaje es obligatorio.");
             esValido = false;
         } else if (longitudMensaje < MIN) {
-            mostrarError("mensaje", `El mensaje debe tener mínimo ${MIN} caracteres. Faltan ${MIN - longitudMensaje}.`);
+            mostrarError("mensaje", `El mensaje debe tener mínimo ${MIN} caracteres.`);
             esValido = false;
         } else if (longitudMensaje > MAX) {
             mostrarError("mensaje", `El mensaje no puede superar los ${MAX} caracteres.`);
@@ -87,15 +90,11 @@ document.addEventListener("DOMContentLoaded", () => {
             esValido = false;
         }
 
+        // --- ACCIÓN SI TODO ES VÁLIDO ---
         if (esValido) {
-            // Mostrar mensaje de éxito
-            mensajeExito.style.display = "block";
-            mensajeExito.scrollIntoView({ behavior: "smooth" });
-
-            form.reset();
-            contadorCaracteres.textContent = `Faltan ${MIN} caracteres para el mínimo.`;
-            contadorCaracteres.style.color = "";
+             form.submit(); // ahora sí se envía al backend
         }
+
     });
 
     function mostrarError(id, mensaje) {

@@ -3,6 +3,7 @@ package co.javeriana.dw.thymeleaf.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import co.javeriana.dw.thymeleaf.entity.Contacto;
 import co.javeriana.dw.thymeleaf.repository.ContactoRepository;
@@ -26,10 +27,12 @@ public class ContactoController {
 
     // Guardar datos
     @PostMapping("/contacto")
-    public String guardarContacto(@ModelAttribute Contacto contacto) {
+    public String guardarContacto(@ModelAttribute Contacto contacto, RedirectAttributes redirectAttributes) {
 
-        contactoRepository.save(contacto);
+    contactoRepository.save(contacto);
 
-        return "redirect:/contacto";
-    }
+    redirectAttributes.addFlashAttribute("exito", true);
+
+    return "redirect:/contacto";
+}
 }
