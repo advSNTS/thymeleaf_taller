@@ -74,7 +74,11 @@
 
     <div class="form_input">
         <label>Mensaje</label>
-        <textarea rows="8" id="mensaje" placeholder="Deja tu mensaje..." th:field="*{mensaje}"></textarea>
+        <textarea rows="8"
+          id="mensaje"
+          maxlength="400"
+          placeholder="Deja tu mensaje..."
+          th:field="*{mensaje}"></textarea>
         <span id="contador-caracteres" style="font-size:0.85rem;">Faltan 40 caracteres para el mínimo.</span>
         <span id="error-mensaje" class="error-mensaje" style="color:red; font-size:0.85rem; display:block;"></span>
     </div>

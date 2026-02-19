@@ -2,44 +2,39 @@ document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("formularioContacto");
     const mensajeInput = document.getElementById("mensaje");
     const contadorCaracteres = document.getElementById("contador-caracteres");
-    const mensajeExito = document.getElementById("mensaje-exito");
+
+    if (!mensajeInput || !contadorCaracteres) {
+        console.error("No se encontraron los elementos del contador");
+        return;
+    }
 
     const MIN = 40;
     const MAX = 400;
 
     // --- LÓGICA DEL CONTADOR DE CARACTERES ---
-    mensajeInput.addEventListener("input", () => {
+    function actualizarContador() {
         const longitud = mensajeInput.value.length;
 
         if (longitud < MIN) {
             contadorCaracteres.textContent = `Faltan ${MIN - longitud} caracteres para el mínimo.`;
             contadorCaracteres.style.color = "red";
-        } else if (longitud > MAX) {
-            contadorCaracteres.textContent = `Te has pasado por ${longitud - MAX} caracteres.`;
-            contadorCaracteres.style.color = "red";
         } else {
-            contadorCaracteres.textContent = `${longitud}/${MAX} caracteres.`;
+            contadorCaracteres.textContent = `${longitud}/${MAX} caracteres`;
             contadorCaracteres.style.color = "green";
         }
-    });
+    }
+
+    mensajeInput.addEventListener("input", actualizarContador);
+    actualizarContador(); // ejecutar al cargar
 
     // --- LÓGICA DE VALIDACIÓN Y ENVÍO ---
     form.addEventListener("submit", (e) => {
-        // Previene que la página se recargue inmediatamente
         e.preventDefault();
 
-        // Ocultar mensaje de éxito previo y limpiar errores
-        mensajeExito.style.display = "none";
-        document.querySelectorAll(".error-mensaje").forEach(el => el.textContent = "");
+        document.querySelectorAll(".error-mensaje")
+            .forEach(el => el.textContent = "");
 
         let esValido = true;
-
-        // Nombre
-        const nombre = document.getElementById("nombre").value.trim();
-        if (nombre === "" || nombre.length < 3) {
-            mostrarError("nombre", "Campo obligatorio. Mínimo 3 caracteres.");
-            esValido = false;
-        }
 
         // Email
         const email = document.getElementById("email").value.trim();
@@ -92,9 +87,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // --- ACCIÓN SI TODO ES VÁLIDO ---
         if (esValido) {
-             form.submit(); // ahora sí se envía al backend
+            form.submit();
         }
-
     });
 
     function mostrarError(id, mensaje) {
