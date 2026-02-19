@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Contacto - Diomedes Style</title>
-
     <link rel="stylesheet" th:href="@{/css/main.css}">
     <link rel="stylesheet" th:href="@{/css/contacto.css}">
 </head>
-
 <body>
 
 <div th:replace="~{fragments/header :: header}"></div>
@@ -16,8 +14,9 @@
 <form id="formularioContacto" th:action="@{/contacto}" th:object="${contacto}" method="post">
 
     <h2>Formulario de Contacto</h2>
+    
     <div id="mensaje-exito" style="display:none; background:#d4edda; color:#155724; padding:1rem; border-radius:6px; margin-bottom:1rem;">
-        ¡Tu mensaje fue enviado correctamente!
+        ¡Tu mensaje fue enviado correctamente con mucho gusto!
     </div>
 
     <fieldset>
@@ -25,36 +24,37 @@
 
         <div class="form_input">
             <label>Nombre Completo</label>
-            <input type="text" placeholder="Diomedes Diaz"
-                   th:field="*{nombre}">
+            <input type="text" id="nombre" placeholder="Diomedes Diaz" th:field="*{nombre}">
+            <span id="error-nombre" class="error-mensaje" style="color:red; font-size:0.85rem;"></span>
         </div>
 
         <div class="form_input">
             <label>Email</label>
-            <input type="email" placeholder="aydiome@gmail.com"
-                   th:field="*{email}">
+            <input type="email" id="email" placeholder="aydiome@gmail.com" th:field="*{email}">
+            <span id="error-email" class="error-mensaje" style="color:red; font-size:0.85rem;"></span>
         </div>
 
         <div class="form_input">
             <label>Teléfono</label>
-            <input type="text" placeholder="3001234567"
-                   th:field="*{telefono}">
+            <input type="text" id="telefono" placeholder="3001234567" th:field="*{telefono}">
+            <span id="error-telefono" class="error-mensaje" style="color:red; font-size:0.85rem;"></span>
         </div>
 
         <div class="form_input">
             <label>Asunto o motivo</label>
-            <select th:field="*{asunto}">
+            <select id="asunto" th:field="*{asunto}">
                 <option value="">Seleccione una opción</option>
                 <option value="contratacion">Contratación para parranda</option>
                 <option value="saludo">Enviar un saludo</option>
                 <option value="otro">Olvidarte es imposible (Otros)</option>
             </select>
+            <span id="error-asunto" class="error-mensaje" style="color:red; font-size:0.85rem;"></span>
         </div>
     </fieldset>
 
     <div class="form_input">
         <label>Tipo de usuario</label>
-        <select th:field="*{tipoUsuario}">
+        <select id="tipoUsuario" th:field="*{tipoUsuario}">
             <option value="Seguidor">Seguidor/a</option>
             <option value="Empresa">Empresa</option>
             <option value="Otros">Otros</option>
@@ -63,9 +63,8 @@
 
     <div class="form_input">
         <label>Referente</label>
-        <input list="referente"
-               th:field="*{referente}">
-        <datalist id="referente">
+        <input list="referente-list" id="referente" th:field="*{referente}">
+        <datalist id="referente-list">
             <option value="Un amigo">
             <option value="Una empresa">
             <option value="Otro">
@@ -74,20 +73,17 @@
 
     <div class="form_input">
         <label>Mensaje</label>
-        <textarea rows="8"
-                  placeholder="Deja tu mensaje..."
-                  th:field="*{mensaje}"></textarea>
+        <textarea rows="8" id="mensaje" placeholder="Deja tu mensaje..." th:field="*{mensaje}"></textarea>
         <span id="contador-caracteres" style="font-size:0.85rem;">Faltan 40 caracteres para el mínimo.</span>
-        <span id="error-mensaje" class="error-mensaje" style="color:red; font-size:0.85rem;"></span>
+        <span id="error-mensaje" class="error-mensaje" style="color:red; font-size:0.85rem; display:block;"></span>
     </div>
 
     <div class="form_input checkbox_group">
-        <input type="checkbox"
-               class="checkbox"
-               th:field="*{terminos}">
-        <label>
+        <input type="checkbox" id="terminos" class="checkbox" th:field="*{terminos}">
+        <label for="terminos">
             Acepto los términos y condiciones
         </label>
+        <span id="error-terminos" class="error-mensaje" style="color:red; font-size:0.85rem; display:block;"></span>
     </div>
 
     <div class="form_input form_actions">
