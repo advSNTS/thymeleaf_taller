@@ -4,14 +4,86 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" th:href="@{/css/main.css}">
     <title>Guía de Instalación</title>
+    <style>
+        /* Estilo adicional para que los comandos resalten */
+        code {
+            background-color: #0f172a;
+            color: #38bdf8;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.95em;
+        }
+        .comando-block {
+            display: block;
+            background-color: #1e293b;
+            color: #f8fafc;
+            padding: 15px;
+            border-radius: 12px;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+    </style>
 </head>
 <body>
     <div th:replace="~{fragments/header :: header}"></div>
 
     <h1>Guía de Instalación</h1>
 
-    <div th:replace="~{fragments/footer :: footer}"></div>
+    <div class="auxiliar">
+        <h2>1. Clonar el Repositorio</h2>
+        <p>
+            El primer paso es obtener el código fuente del proyecto. Abre tu terminal y ejecuta el siguiente comando para clonar el repositorio oficial:
+        </p>
+        <div class="comando-block">
+            git clone https://github.com/advSNTS/thymeleaf_taller
+        </div>
+    </div>
 
+    <div class="auxiliar">
+        <h2>2. Prerrequisitos</h2>
+        <p>
+            Para asegurar que la aplicación funcione en cualquier entorno sin conflictos de dependencias, utilizamos <strong>Docker</strong>. 
+            Asegúrate de tener instalado y ejecutándose Docker Desktop o Docker Engine en tu sistema antes de continuar.
+        </p>
+    </div>
+
+    <div class="auxiliar">
+        <h2>3. Despliegue con Docker</h2>
+        <p>
+            Una vez dentro de la carpeta del proyecto, sigue estos pasos para construir y levantar el contenedor:
+        </p>
+        
+        <p><strong>A. Construir la imagen:</strong></p>
+        <div class="comando-block">
+            docker build -t taller .
+        </div>
+
+        <p><strong>B. Ejecutar el contenedor:</strong></p>
+        <div class="comando-block">
+            docker run -p 8080:8080 taller
+        </div>
+        <p>
+            Esto mapeará el puerto <code>8080</code> de tu máquina local al puerto del contenedor.
+        </p>
+    </div>
+
+    <div class="auxiliar">
+        <h2>4. Acceso a la Base de Datos (H2)</h2>
+        <p>
+            La aplicación utiliza una base de datos H2 en memoria para facilitar las pruebas. Puedes acceder a la consola de administración una vez la aplicación esté corriendo en:
+            <br>
+            <code>http://localhost:8080/h2-console</code>
+        </p>
+        <p>
+            <strong>Importante:</strong> Para conectar correctamente, asegúrate de colocar la siguiente configuración en el campo <code>JDBC URL</code>:
+        </p>
+        <div class="comando-block">
+            jdbc:h2:file:/app/data/testdb
+        </div>
+    </div>
+
+    <div th:replace="~{fragments/footer :: footer}"></div>
 
 </body>
 </html>
