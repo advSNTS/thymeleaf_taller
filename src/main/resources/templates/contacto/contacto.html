@@ -77,6 +77,8 @@
         <textarea rows="8"
                   placeholder="Deja tu mensaje..."
                   th:field="*{mensaje}"></textarea>
+        <span id="contador-caracteres" style="font-size:0.85rem;">Faltan 40 caracteres para el mínimo.</span>
+        <span id="error-mensaje" class="error-mensaje" style="color:red; font-size:0.85rem;"></span>
     </div>
 
     <div class="form_input checkbox_group">
