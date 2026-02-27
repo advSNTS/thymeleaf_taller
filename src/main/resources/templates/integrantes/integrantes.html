@@ -19,7 +19,7 @@
   <div class="integrantes">
 
   <div class="integrante">
-    <h2>Sara Ocampo Feria</h2>
+    <h2>Sara Lucía Ocampo Feria</h2>
     <h3>Desarrolladora</h3>
     <p>Amante  de la programación</p>
   </div>
@@ -35,36 +35,50 @@
     <h3>Desarrollador</h3>
     <p>Amante de la informática y la computación</p>
   </div>
+
   <div class="integrante">
     <h2>Santiago jose Hernandez </h2>
     <h3>Desarrollador</h3>
     <p>Amante del diseño y la programación</p>
   </div>
+  
   <div class="integrante">
-    <h2>Luis Enrique Santos</h2>
+    <h2>Luis   Enrique Santos</h2>
     <h3>Desarrollador</h3>
     <p>Amante de las redes y la seguridad</p>
   </div>
 
-  <div class="acta-reunion-container">
-        <h2>Acta de reunión</h2>
-        <div class="acta-box">
-            <p>
+</div>
+
+  <div th:class="acta-contenedor">
+        <h2 th:class="acta-titulo"> Bitacora del proyecto Primera entrega. </h2>
+
+
+            <p th:class="acta-cuerpo">
                 <strong>Fecha:</strong> 24 de febrero de 2026 <br>
                 <strong>Asistentes:</strong> Todo el equipo. <br><br>
                 En la sesión de hoy, no hubo actividad ni discusión. El docente
                 presentó las nuevas tecnologías que se irían a implementar
                 en el siguiente taller (DTO, BD diferente a H2, JPA, etc.).
                 De manera adicional se definió el siguiente repositorio para
-                el taller.
-                <p>Link: https://github.com/advSNTS/proyecto_web.</p>
+                el taller. <br><br>
+                <span> <strong>Link: </strong> https://github.com/advSNTS/proyecto_web.</span>
             </p>
-        </div>
-    </div>
 
-  
+            <p th:class="acta-cuerpo">
+                <strong>Fecha:</strong> 26 de febrero de 2026 <br>
+                <strong>Asistentes:</strong> Luis Santos, Santiago Hernandez, Thomas Arévalo, Sara Ocampo. <br><br>
+                El profesor presenta el enunciado y las historias de usuario del proyecto (28 en total), 
+                comienza la discusión sobre la planeación de este y su posible orden de desarrollo, Se llego 
+                a la conclusión que la base del proyecto es la bdd, Luis presentará un borrador la siguiente clase.<br>   
 
-</div>
+                Se asignaron los temas de exposicion de la siguiente clase, como grupo tenemos el tema de Pruebas 
+                Funcionales específicamente Sonarqube donde el docente pide que expliquemos su funcionamiento, 
+                haciendo énfasis en por que es importante basarnos en este tipo de Prueba Funcional para la etapa 
+                de QA del proyecto. La división de la investigación queda pendiente. <br><br>
+                <span> <strong>Link: </strong> https://n9.cl/iczn0b </span>
+            </p>
+  </div>
 
   <div th:replace="~{fragments/footer :: footer}"></div>
     
